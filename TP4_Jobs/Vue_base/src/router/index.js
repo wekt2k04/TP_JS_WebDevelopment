@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import User from '../views/User.vue'
-import Administrator from '../views/Administrator.vue'
+import Home from '../views/Home.vue'
+import AddJob from '../views/AddJob.vue'
+import EditJob from '../views/EditJob.vue'
 
 const routes = [
-  { path: '/', name: 'User', component: User },
-  { path: '/administrator', name: 'Administrator', component: Administrator },
-  { path: '/job/:id', name: 'JobDetail', component: () => import('../views/JobDetail.vue') }
+  { path: '/', component: Home },
+  { path: '/add', component: AddJob },
+  { path: '/jobs/:id', component: EditJob, props: true }
 ]
 
 const router = createRouter({
